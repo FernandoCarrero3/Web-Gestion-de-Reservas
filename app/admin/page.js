@@ -359,6 +359,49 @@ export default function Admin() {
           color: ${d ? "rgba(240,236,228,0.25)" : "rgba(26,18,9,0.3)"};
           font-size: 0.85rem;
         }
+
+        @media (max-width: 480px) {
+          .panel {
+            padding: 2rem 1rem;
+          }
+
+          .panel-title {
+            font-size: 1.7rem;
+          }
+
+          .panel-header {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
+          .header-right {
+            align-items: flex-start;
+            width: 100%;
+          }
+
+          .action-btns {
+            width: 100%;
+          }
+
+          .action-btn {
+            flex: 1;
+            text-align: center;
+          }
+
+          .table th, .table td {
+            padding: 0.75rem 0.6rem;
+            font-size: 0.75rem;
+          }
+
+          .stats {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          .theme-btn {
+            top: 1rem;
+            right: 1rem;
+          }
+        }
       `}</style>
 
       <div className="page">

@@ -225,6 +225,35 @@ export default function Home() {
           background: ${d ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)"};
           color: ${d ? "rgba(240,236,228,0.9)" : "rgba(26,18,9,0.9)"};
         }
+
+        @media (max-width: 480px) {
+        .page-wrapper {
+          padding: 1rem;
+          align-items: flex-start;
+          padding-top: 4rem;
+        }
+
+        .card {
+          padding: 2rem 1.5rem;
+          border-radius: 20px;
+        }
+
+        .title {
+          font-size: 2rem;
+        }
+
+        .row {
+          grid-template-columns: 1fr;
+          gap: 1.25rem;
+        }
+
+        .theme-btn {
+          top: 1rem;
+          right: 1rem;
+          font-size: 0.68rem;
+          padding: 0.35rem 0.75rem;
+        }
+      }
       `}</style>
 
       <div className="page-wrapper">
