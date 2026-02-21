@@ -142,4 +142,4 @@ Este proyecto está bajo la licencia MIT. Puedes usarlo, modificarlo y distribui
 
 **Fernando Carrero Pérez**  
 Estudiante de Ingeniería Informática – Universidad de Huelva  
-[GitHub](https://github.com/FernandoCarrero3) · [LinkedIn](https://linkedin.com/in/tu-perfil)
+[GitHub](https://github.com/FernandoCarrero3) · [LinkedIn](www.linkedin.com/in/fernando-carrero)
