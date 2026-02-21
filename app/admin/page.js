@@ -360,14 +360,13 @@ export default function Admin() {
           font-size: 0.85rem;
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 640px) {
           .panel {
             padding: 2rem 1rem;
+            padding-top: 4rem;
           }
 
-          .panel-title {
-            font-size: 1.7rem;
-          }
+          .panel-title { font-size: 1.7rem; }
 
           .panel-header {
             flex-direction: column;
@@ -379,28 +378,49 @@ export default function Admin() {
             width: 100%;
           }
 
-          .action-btns {
-            width: 100%;
-          }
+          .action-btns { width: 100%; }
 
           .action-btn {
             flex: 1;
             text-align: center;
           }
 
-          .table th, .table td {
-            padding: 0.75rem 0.6rem;
-            font-size: 0.75rem;
+          .stats { grid-template-columns: 1fr 1fr; }
+
+          .theme-btn { top: 1rem; right: 1rem; }
+
+          .table thead { display: none; }
+
+          .table tr {
+            display: block;
+            border: 1px solid ${d ? "rgba(180,140,60,0.15)" : "rgba(180,140,60,0.2)"};
+            border-radius: 12px;
+            margin: 0.75rem 1rem;
+            padding: 1rem;
+            background: ${d ? "rgba(255,255,255,0.02)" : "rgba(255,255,255,0.6)"};
           }
 
-          .stats {
-            grid-template-columns: 1fr 1fr;
+          .table td {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.4rem 0;
+            font-size: 0.82rem;
+            border-bottom: 1px solid ${d ? "rgba(255,255,255,0.04)" : "rgba(0,0,0,0.05)"};
           }
 
-          .theme-btn {
-            top: 1rem;
-            right: 1rem;
+          .table td:last-child { border-bottom: none; }
+
+          .table td::before {
+            content: attr(data-label);
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: ${d ? "rgba(240,236,228,0.35)" : "rgba(26,18,9,0.4)"};
           }
+
+          .table-wrapper { border-radius: 12px; }
         }
       `}</style>
 
@@ -489,11 +509,11 @@ export default function Admin() {
                   <tbody>
                     {reservas.map((r, i) => (
                       <tr key={i}>
-                        <td>{r.nombre}</td>
-                        <td>{r.telefono}</td>
-                        <td>{r.email}</td>
-                        <td>{r.servicio}</td>
-                        <td>
+                        <td data-label="Nombre">{r.nombre}</td>
+                        <td data-label="Teléfono">{r.telefono}</td>
+                        <td data-label="Email">{r.email}</td>
+                        <td data-label="Servicio">{r.servicio}</td>
+                        <td data-label="Fecha">
                           {r.fecha}
                           {r.fecha === hoy && <span className="badge-hoy">Hoy</span>}
                         </td>
