@@ -10,6 +10,7 @@ export default function Admin() {
   const [mounted, setMounted] = useState(false);
   const [ultimaActualizacion, setUltimaActualizacion] = useState(null);
   const [darkMode, setDarkMode] = useState(true);
+  const [actualizando, setActualizando] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -26,6 +27,7 @@ export default function Admin() {
   };
 
   const fetchReservas = async (pwd) => {
+    setActualizando(true);
     try {
       const response = await fetch("/api/admin/reservas", {
         headers: { Authorization: `Bearer ${pwd}` },
@@ -44,6 +46,7 @@ export default function Admin() {
       console.error("Error al obtener reservas");
     } finally {
       setCargando(false);
+      setActualizando(false);
     }
   };
 
@@ -466,8 +469,10 @@ export default function Admin() {
                   <button
                     className="action-btn gold"
                     onClick={() => fetchReservas(sessionStorage.getItem("admin_password"))}
+                    disabled={actualizando}
+                    style={{ opacity: actualizando ? 0.7 : 1 }}
                   >
-                    ↻ Actualizar
+                    {actualizando ? "↻ Actualizando..." : "↻ Actualizar"}
                   </button>
                   <button className="action-btn" onClick={handleLogout}>Cerrar sesión</button>
                 </div>
