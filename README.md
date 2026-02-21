@@ -132,14 +132,6 @@ El proyecto está desplegado en **Vercel**. Para desplegar tu propia versión:
 
 ---
 
-## 📸 Capturas de pantalla
-
-| Formulario (modo oscuro) | Formulario (modo claro) | Panel de administración |
-|---|---|---|
-| _(añadir captura)_ | _(añadir captura)_ | _(añadir captura)_ |
-
----
-
 ## 📄 Licencia
 
 Este proyecto está bajo la licencia MIT. Puedes usarlo, modificarlo y distribuirlo libremente.
